@@ -1,8 +1,19 @@
 from pymongo import MongoClient
 
-uri = "mongodb+srv://danel:zslil9kl044iMIYs@cluster0.n1n9npc.mongodb.net/?retryWrites=true&w=majority"
-db_name = "DanelProject"
-collection_name = "Products"
+import os
+from pymongo import MongoClient
+from dotenv import load_dotenv
+
+load_dotenv()
+
+mongo_uri = os.getenv('MONGO_URI')
+db_name = os.getenv('DB_NAME')
+collection_name = os.getenv('COLLECTION_NAME')
+
+client = MongoClient(mongo_uri)
+db = client[db_name]
+collection = db[collection_name]
+
 
 client = MongoClient(uri)
 db = client[db_name]
@@ -40,10 +51,7 @@ client = MongoClient(uri)
 db = client[db_name]
 collection = db[collection_name]
 
-# driver_service = Service(GeckoDriverManager().install())
-# options = Options()
-# options.add_argument("--headless=new")
-# driver = webdriver.Firefox(service=driver_service, options=options)
+
 
 
 base_url = 'https://arbuz.kz'
@@ -158,14 +166,6 @@ for category in category_urls:
             driver.execute_script("arguments[0].click();", next_page_link)
             
 
-# uri = "mongodb+srv://danel:zslil9kl044iMIYs@cluster0.n1n9npc.mongodb.net/?retryWrites=true&w=majority"
-# db_name = "DanelProject"
-# collection_name = "Products"
-
-
-# client = MongoClient(uri)
-# db = client[db_name]
-# collection = db[collection_name]
 
 
 def parse_product_card(card, category):
