@@ -2,7 +2,7 @@
     "crons": [
       {
         "path": "/parse/all.py",
-        "schedule": "*/10 * * * *"
+        "schedule": "0 5 * * *"
       }
     ]
   }
