@@ -1,7 +1,6 @@
 from pymongo import MongoClient
-
 import os
-from pymongo import MongoClient
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,11 +10,6 @@ db_name = os.getenv('DB_NAME')
 collection_name = os.getenv('COLLECTION_NAME')
 
 client = MongoClient(mongo_uri)
-db = client[db_name]
-collection = db[collection_name]
-
-
-client = MongoClient(uri)
 db = client[db_name]
 collection = db[collection_name]
 
@@ -42,12 +36,11 @@ import json
 from pymongo import MongoClient
 
 
-uri = "mongodb+srv://danel:zslil9kl044iMIYs@cluster0.n1n9npc.mongodb.net/?retryWrites=true&w=majority"
-db_name = "DanelProject"
-collection_name = "Products"
+mongo_uri = os.getenv('MONGO_URI')
+db_name = os.getenv('DB_NAME')
+collection_name = os.getenv('COLLECTION_NAME')
 
-
-client = MongoClient(uri)
+client = MongoClient(mongo_uri)
 db = client[db_name]
 collection = db[collection_name]
 
