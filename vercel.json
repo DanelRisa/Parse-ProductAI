@@ -1,7 +1,7 @@
 {
     "crons": [
       {
-        "path": "parse/all.py",
+        "path": "/parse/all.py",
         "schedule": "*/10 * * * *"
       }
     ]
