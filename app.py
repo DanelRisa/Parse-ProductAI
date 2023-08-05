@@ -4,7 +4,7 @@ import streamlit as st
 import openai
 from dotenv import load_dotenv
 
-load_dotenv()f
+load_dotenv()
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
