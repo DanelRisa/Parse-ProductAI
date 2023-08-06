@@ -1,8 +1,0 @@
-{
-    "crons": [
-      {
-        "path": "/parse/all.py",
-        "schedule": "0 5 * * *"
-      }
-    ]
-  }
